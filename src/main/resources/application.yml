@@ -1,0 +1,17 @@
+server:
+  port: 8791
+spring:
+  application:
+    name: springclouddemozuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: SPRINGCLOUDDEMOCONSUMER
+    api-b:
+      path: /api-b/**
+      serviceId: SPRINGCLOUDDEMOCONSUMERFEIGN
